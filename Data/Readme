@@ -12,13 +12,16 @@ They concern the Ground Penetrating Radar tomography from geophysics.
     A code example for the solver can be found here : https://github.com/jlalvis/VAE_SGD/blob/master/SGAN/tomokernel_straight.py 
  
 
-The files are in H5 format. They can be read using the package h5py. The numbers in the training file names indicate the size of training set. 
+The files are in H5 format. They can be read using the package h5py. 
+Training set size = 9'000 examples. 
+Test set size = 1'000 examples
+Validation sets sizes = 2'000 examples each
 
 To read files : 
 
 # training models and truett 
 train_models_file = h5py.File('./Data/train_models.h5')
-train_truett_file = h5py.File('./Data/train_truett_lin_81.h5')
+train_truett_file = h5py.File('./Data/train_truett_lin_81.h5') # 81 indicates the size of the vector
 
 train_models_all = torch.FloatTensor(train_models_file.get("train_models"))
 train_truett_lin_all = torch.FloatTensor(train_truett_file.get("train_truett_lin_81"))
