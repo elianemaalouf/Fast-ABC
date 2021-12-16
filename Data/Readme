@@ -8,9 +8,9 @@ They concern the Ground Penetrating Radar tomography from geophysics.
 # Mean = 14 
 # Covariance kernel : isotropic exponential, with 25 pixels of length scales in each direction and variance = 0.16 
  
- ## First arrival times vectors : 
- # 9 emitters and 9 receivers are assumed to be placed on the sides of subsurface models. Check paper detailed for setup. 
- # To each model from above we apply the straight ray forward solver (i.e., linear solver) to get a vector of 81 measurment values (a.k.a. truett).
+## First arrival times vectors : 
+# 9 emitters and 9 receivers are assumed to be placed on the sides of subsurface models. Check paper detailed for setup. 
+# To each model from above we apply the straight ray forward solver (i.e., linear solver) to get a vector of 81 measurment values (a.k.a. truett).
     A code example for the solver can be found here : https://github.com/jlalvis/VAE_SGD/blob/master/SGAN/tomokernel_straight.py 
 
 ## Training set size = 9'000 examples. 
