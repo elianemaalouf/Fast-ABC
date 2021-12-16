@@ -1,23 +1,27 @@
-This folder contains training, validation and test data Fast-ABC paper experiments. 
+This folder contains training, validation and test data for Fast-ABC paper experiments. 
 They concern the Ground Penetrating Radar tomography from geophysics. 
 
-- Subsurface slowness fields (ns/m) (a.k.a. models) were simulated from a multivariate Gaussian with the following configuration : 
- * Subsurface image size : 40 x 50 pixels (width x height) -> scale of 0.1 meters -> subsurface model of 4 x 5 meters
- * Mean = 14 
- * Covariance kernel : isotropic exponential, with 25 pixels of length scales in each direction and variance = 0.16 
+### How the data was generated ? 
+
+## Subsurface slowness fields (ns/m) (a.k.a. models) were simulated from a multivariate Gaussian with the following configuration : 
+# Subsurface image size : 40 x 50 pixels (width x height) -> scale of 0.1 meters -> subsurface model of 4 x 5 meters
+# Mean = 14 
+# Covariance kernel : isotropic exponential, with 25 pixels of length scales in each direction and variance = 0.16 
  
-- First arrival times vectors : 
- * 9 emitters and 9 receivers are assumed to be placed on the sides of subsurface models. Check paper detailed for setup. 
- * to each model from above we apply the straight ray forward solver (i.e., linear solver) to get a vector of 81 measurment values (a.k.a. truett).
+ ## First arrival times vectors : 
+ # 9 emitters and 9 receivers are assumed to be placed on the sides of subsurface models. Check paper detailed for setup. 
+ # To each model from above we apply the straight ray forward solver (i.e., linear solver) to get a vector of 81 measurment values (a.k.a. truett).
     A code example for the solver can be found here : https://github.com/jlalvis/VAE_SGD/blob/master/SGAN/tomokernel_straight.py 
+
+## Training set size = 9'000 examples. 
+## Test set size = 1'000 examples
+## Validation sets sizes = 2'000 examples each
  
+### How to read the data ?
 
-The files are in H5 format. They can be read using the package h5py. 
-Training set size = 9'000 examples. 
-Test set size = 1'000 examples
-Validation sets sizes = 2'000 examples each
+## The files are in H5 format. They can be read using the package h5py. 
 
-To read files : 
+## To read files : 
 
 # training models and truett 
 train_models_file = h5py.File('./Data/train_models.h5')
