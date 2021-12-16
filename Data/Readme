@@ -1,7 +1,7 @@
 This folder contains training, validation and test data for Fast-ABC paper experiments. 
 They concern the Ground Penetrating Radar tomography from geophysics. 
 
-### How the data was generated ? 
+<b> How the data was generated ? </b> 
 
 ## Subsurface slowness fields (ns/m) (a.k.a. models) were simulated from a multivariate Gaussian with the following configuration : 
 # Subsurface image size : 40 x 50 pixels (width x height) -> scale of 0.1 meters -> subsurface model of 4 x 5 meters
